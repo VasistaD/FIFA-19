@@ -1,0 +1,31 @@
+body{
+    background-color: #262626;
+}
+.carousel-inner > .item > img {
+    width:640px;
+    height:360px;
+}
+.linker{
+    text-decoration: none;
+    color: green;
+}
+.border_cardDeck{
+    border: 2px solid white;
+    padding: 20px 15px;
+    margin: 10px 15px;
+}
+
+.con{
+    margin-top: 10px;
+    height: 100vh;
+}
+.jumbotron-fluid{
+    text-align: center;
+    color:white;
+    padding: 10px;
+}
+.tranquil{
+    background: #833ab4;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #fcb045, #fd1d1d, #833ab4);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #fcb045, #fd1d1d, #833ab4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
