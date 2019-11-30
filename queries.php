@@ -192,7 +192,7 @@ include("connectFDB.php");
 if(isset($_GET['q1']))
 {
 
-  echo "<h2 class='text-center'>Result of Query:</h2>";
+  echo "<h2 class='text-center'>Footballer names:</h2>";
 
   echo "<br><br>";
 
@@ -217,7 +217,7 @@ if (mysqli_num_rows($result) > 0) {
 if(isset($_GET['q2']))
 {
 
-  echo "<h2 class='text-center'>Result of Query:</h2>";
+  echo "<h2 class='text-center'>Players rated above 90:</h2>";
 
   echo "<br><br>";
 
@@ -242,7 +242,7 @@ if (mysqli_num_rows($result) > 0) {
 if(isset($_GET['q3']))
 {
 
-  echo "<h2 class='text-center'>Result of Query:</h2>";
+  echo "<h2 class='text-center'>Young players under age 20:</h2>";
 
   echo "<br><br>";
 
@@ -267,7 +267,7 @@ if (mysqli_num_rows($result) > 0) {
 if(isset($_GET['q4']))
 {
 
-  echo "<h2 class='text-center'>Result of Query:</h2>";
+  echo "<h2 class='text-center'>Top 5 players with highest wage:</h2>";
 
   echo "<br><br>";
 
@@ -294,7 +294,7 @@ if (mysqli_num_rows($result) > 0) {
 if(isset($_GET['q5']))
 {
 
-  echo "<h2 class='text-center'>Result of Query:</h2>";
+  echo "<h2 class='text-center'>Managers from Spain and their clubs:</h2>";
 
   echo "<br><br>";
 
@@ -368,11 +368,11 @@ if(isset($_GET['q8']))
 
 if(isset($_GET['q9']))
 {
-  echo "<h2 class='text-center'>Result of Query:</h2>";
+  echo "<h2 class='text-center'>Top 10 - Stored Procedure:</h2>";
 
   echo "<br><br>";
 
-$sql = "call setTOP();";
+$sql = "call setTOP10();";
 
 $result = mysqli_query($con, $sql);
 

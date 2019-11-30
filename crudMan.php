@@ -178,6 +178,18 @@
         if($man_name && $age && $nationality && $expr && $club_managing)
         {
 
+          #double insertion tackling
+
+          $ins_check = "SELECT man_name FROM manager WHERE man_name='$man_name';";
+
+          $check_res = mysqli_query($con,$ins_check);
+          if(mysqli_num_rows($check_res) > 0)
+          {
+            echo "<h6 class='text-center'>Manager has already been inserted to database</h6><br><br>";
+          }
+          else{
+          #DIT end
+
         if(mysqli_query($con,$ins_query1))
         {
             echo "<br><h6 class='text-center'>Manager added to database</h6>";
@@ -186,7 +198,7 @@
         {
             echo "<br><h6 class='text-center'>Try again</h6>";
         }
-        }
+        }}
         else
             echo "<br><h6 class='text-center'>Enter all details of Manager</h6>";
     }
