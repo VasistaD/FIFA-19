@@ -203,6 +203,19 @@
 
         if($player_name && $club && $age && $rating && $nationality && $position && $wage && $trans_val)
         {
+
+          #double insertion tackling
+
+            $ins_check = "SELECT player_name FROM footballer WHERE player_name='$player_name';";
+
+            $check_res = mysqli_query($con,$ins_check);
+            if(mysqli_num_rows($check_res) > 0)
+            {
+              echo "<h6 class='text-center'>Player has already been inserted to database</h6><br><br>";
+            }
+
+          #DIT end
+            else{
             $ins_query1 = "INSERT INTO footballer(player_name,club,age,rating,nationality,position) VALUES('$player_name','$club',$age,$rating,'$nationality','$position');";
 
             if(mysqli_query($con,$ins_query1))
@@ -224,7 +237,7 @@
             {
                 echo "<h6 class='text-center'>Try again</h6><br><br>";
             }
-        }
+        }}
         else
             echo "<h6 class='text-center'>Enter all details of Player</h6><br><br>";
     }
