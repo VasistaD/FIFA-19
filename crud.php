@@ -63,6 +63,18 @@
           <a class="dropdown-item" href="crudSkill.php">Skills</a>
         </div>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Update
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="updateP.php">Player</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="updateMan.php">Manager</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="updateSkill.php">Skills</a>
+        </div>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="about.html">About Us<span class="sr-only">(current)</span></a>
       </li>
@@ -213,7 +225,7 @@
             {
               echo "<h6 class='text-center'>Player has already been inserted to database</h6><br><br>";
             }
-
+            
           #DIT end
             else{
             $ins_query1 = "INSERT INTO footballer(player_name,club,age,rating,nationality,position) VALUES('$player_name','$club',$age,$rating,'$nationality','$position');";
@@ -235,7 +247,7 @@
             }
             else
             {
-                echo "<h6 class='text-center'>Try again</h6><br><br>";
+                echo "<h6 class='text-center'>Try again / Player under-aged</h6><br><br>";
             }
         }}
         else

@@ -67,6 +67,18 @@
           <a class="dropdown-item" href="crudSkill.php">Skills</a>
         </div>
       </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Update
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="updateP.php">Player</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="updateMan.php">Manager</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="updateSkill.php">Skills</a>
+        </div>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="about.html">About Us<span class="sr-only">(current)</span></a>
       </li>
@@ -173,8 +185,6 @@
         $expr = $_GET['expr'];
         $club_managing = $_GET['club_manages'];
 
-        $ins_query1 = "INSERT INTO manager(man_name,age,nationality,expr,club_manages) VALUES('$man_name',$age,'$nationality',$expr,'$club_managing');";
-
         if($man_name && $age && $nationality && $expr && $club_managing)
         {
 
@@ -189,6 +199,7 @@
           }
           else{
           #DIT end
+          $ins_query1 = "INSERT INTO manager(man_name,age,nationality,expr,club_manages) VALUES('$man_name',$age,'$nationality',$expr,'$club_managing');";
 
         if(mysqli_query($con,$ins_query1))
         {

@@ -27,7 +27,7 @@
           padding: 15px;
         }
 
-        #insForm{
+        #upForm{
           padding:20px;
         }
     </style>
@@ -52,7 +52,7 @@
         <a class="nav-link" href="queries.php">Queries <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Insert
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -64,7 +64,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Update
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -86,110 +86,97 @@
 </nav>
 <br>
 <br>
-<h1 class="text-center">Add skills to existing player</h1>
+<h1 class="text-center">Update Player</h1>
 <br>
 <br>
-
-<div id="insForm" class="container border border-light">
-<form method="GET" action="crudSkill.php">
+<!--
+<div class="container">
+    <div class="row justify-content-center" style="border:1px solid white; padding:10px">
+        <div class="col-sm-9 align-self-center">
+            <label style="color:white">
+                Display Player Names
+            </label>
+        </div>
+        <div class="col-sm-3 align-self-center">
+            <button class="btn btn-primary btn-lg" name="q1">Display</button>
+        </div>
+    </div>
+</div>
+-->
+<!--Form-->
+<div id="upForm" class="container border border-light">
+<form method="GET" action="updateP.php">
                     <div class="container">
 
                     <div class="row">
                     <div class="col-md-9">
-                    <label>Player ID:</label><br>
+                    <label>Player Name:</label><br>
                     </div>
                     <div class="col-md-3">
-                    <input type="number" name="player_id"/><br>
+                    <input type="text" name="player_name"/><br>
                     </div>
                     </div><br>
 
                     <div class="row">
                     <div class="col-md-9">
-                    <label>Pace:</label><br>
+                    <label>Club:</label><br>
                     </div>
                     <div class="col-md-3">
-                    <input type="number" name="pace"/><br>
+                    <input type="text" name="club"/><br>
                     </div>
                     </div><br>
 
                     <div class="row">
                     <div class="col-md-9">
-                    <label>Shooting:</label><br>
+                    <label>Age:</label><br>
                     </div>
                     <div class="col-md-3">
-                    <input type="number" name="shoot"/><br>
+                    <input type="number" name="age"/><br>
                     </div>
                     </div><br>
 
                     <div class="row">
                     <div class="col-md-9">
-                    <label>Passing:</label><br>
+                    <label>Overall Rating:</label><br>
                     </div>
                     <div class="col-md-3">
-                    <input type="number" name="pass"/><br>
+                    <input type="number" name="rating"/><br>
                     </div>
                     </div><br>
 
                     <div class="row">
                     <div class="col-md-9">
-                    <label>Dribbling:</label><br>
+                    <label>Nationality:</label><br>
                     </div>
                     <div class="col-md-3">
-                    <input type="number" name="drib"/><br>
+                    <input type="text" name="nationality"/><br>
                     </div>
                     </div><br>
 
                     <div class="row">
                     <div class="col-md-9">
-                    <label>Defending:</label><br>
+                    <label>Position:</label><br>
                     </div>
                     <div class="col-md-3">
-                    <input type="number" name="def"/><br>
+                    <input type="text" name="position"/><br>
                     </div>
                     </div><br>
 
                     <div class="row">
                     <div class="col-md-9">
-                    <label>Physicality:</label><br>
+                    <label>Wage:</label><br>
                     </div>
                     <div class="col-md-3">
-                    <input type="number" name="phy"/><br>
+                    <input type="number" name="wage"/><br>
                     </div>
                     </div><br>
 
                     <div class="row">
                     <div class="col-md-9">
-                    <label>Jumping:</label><br>
+                    <label>Transfer Value:</label><br>
                     </div>
                     <div class="col-md-3">
-                    <input type="number" name="jump"/><br>
-                    </div>
-                    </div><br>
-
-                    <div class="row">
-                    <div class="col-md-9">
-                    <label>Tackling:</label><br>
-                    </div>
-                    <div class="col-md-3">
-                    <input type="number" name="tackling"/><br>
-                    </div>
-                    </div><br>
-
-                    <div class="row">
-                    <div class="col-md-9">
-                    <label>GK Handling:</label><br>
-                    </div>
-                    <div class="col-md-3">
-                    <input type="number" name="handling"/><br>
-                    </div>
-                    </div><br>
-
-                    <div class="row">
-                    <div class="col-md-9">
-                    <label>GK Kicking:</label><br>
-                    </div>
-                    <div class="col-md-3">
-                    <input type="number" name="kick"/><br>
+                    <input type="number" name="trans_val"/><br>
                     </div>
                     </div><br>
 
@@ -201,7 +188,7 @@
 </div>
 <!--Form ends-->
 </body>
-<br><br>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -210,44 +197,56 @@
 
 <?php
 
+    echo "<br><br>";
+
     include("connectFDB.php");
     include("functions.php");
 
     if(isset($_GET['submit']))
     {
-        $player_id = $_GET['player_id'];
-        $pace = $_GET['pace'];
-        $shoot = $_GET['shoot'];
-        $pass = $_GET['pass'];
-        $drib = $_GET['drib'];
-        $def = $_GET['def'];
-        $phy = $_GET['phy'];
-        $jump = $_GET['jump'];
-        $tackling = $_GET['tackling'];
-        $handling = $_GET['handling'];
-        $kick = $_GET['kick'];
+        $player_name = $_GET['player_name'];
+        $club = $_GET['club'];
+        $age = $_GET['age'];
+        $rating = $_GET['rating'];
+        $nationality = $_GET['nationality'];
+        $position = $_GET['position'];
+        $wage = $_GET['wage'];
+        $trans_val = $_GET['trans_val'];
 
-        if($pace && $shoot && $pass && $drib && $def && $phy && $jump && $tackling && $handling && $kick)
+        if($player_name && $club && $age && $rating && $nationality && $position && $wage && $trans_val)
         {
-          $check_res = mysqli_query($con,$ins_check);
+
+          #double insertion tackling
+
+            $ins_check = "SELECT player_name FROM footballer WHERE player_name='$player_name';";
+
+            $check_res = mysqli_query($con,$ins_check);
             if(mysqli_num_rows($check_res) <= 0)
             {
               echo "<h6 class='text-center'>Player does not exist in database</h6><br><br>";
             }
+            else if($age < 15)
+            {
+              echo "<h6 class='text-center'>Player age is under-aged</h6><br><br>";
+            }
+
+          #DIT end
             else{
-            $ins_query = "INSERT INTO skills(player_id,pace,shoot,pass,drib,def,phy,jump,tackling,handling,kick) VALUES($player_id,$pace,$shoot,$pass,$drib,$def,$phy,$jump,$tackling,$handling,$kick);";
-            
-            if(mysqli_query($con,$ins_query))
-            {
-                echo "<br><h6 class='text-center'>Skills added to Player</h6><br><br>";
-            }
-            else
-            {
-                echo "<br><h6 class='text-center'>Try again</h6>";
-            }
+            $up_q = "SELECT player_id FROM footballer WHERE player_name='$player_name';";
+            $up_q1 = mysqli_query($con,$up_q);
+            $up_id = mysqli_fetch_assoc($up_q1);
+
+            $ins_query1 = "UPDATE footballer SET player_name='$player_name', club='$club', age=$age, rating=$rating, nationality='$nationality', position='$position' WHERE player_id = $up_id[player_id];";
+
+            mysqli_query($con,$ins_query1);
+                $ins_query2 = "UPDATE valued SET trans_val=$trans_val, wage=$wage WHERE id=$up_id[player_id];";
+
+                mysqli_query($con,$ins_query2);
+                echo "<h6 class='text-center'>Player has been updated</h6><br><br>";
+                
         }}
         else
-            echo "<br><h6 class='text-center'>Enter all details of Player</h6>";
+            echo "<h6 class='text-center'>Enter all details of Player</h6><br><br>";
     }
 
 ?>

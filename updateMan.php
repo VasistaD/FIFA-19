@@ -11,6 +11,10 @@
         body{
           color:white;
         }
+
+        h6{
+            color:white;
+        }
        
         #qtable, td, th {  
           border: 1px solid white;
@@ -52,7 +56,7 @@
         <a class="nav-link" href="queries.php">Queries <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Insert
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -64,7 +68,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Update
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -86,110 +90,70 @@
 </nav>
 <br>
 <br>
-<h1 class="text-center">Add skills to existing player</h1>
+<h1 class="text-center">Update Manager</h1>
 <br>
 <br>
-
+<!--
+<div class="container">
+    <div class="row justify-content-center" style="border:1px solid white; padding:10px">
+        <div class="col-sm-9 align-self-center">
+            <label style="color:white">
+                Display Player Names
+            </label>
+        </div>
+        <div class="col-sm-3 align-self-center">
+            <button class="btn btn-primary btn-lg" name="q1">Display</button>
+        </div>
+    </div>
+</div>
+-->
+<!--Form-->
 <div id="insForm" class="container border border-light">
-<form method="GET" action="crudSkill.php">
+<form method="GET" action="updateMan.php">
                     <div class="container">
 
                     <div class="row">
                     <div class="col-md-9">
-                    <label>Player ID:</label><br>
+                    <label>Manager Name:</label><br>
                     </div>
                     <div class="col-md-3">
-                    <input type="number" name="player_id"/><br>
+                    <input type="text" name="man_name"/><br>
                     </div>
                     </div><br>
 
                     <div class="row">
                     <div class="col-md-9">
-                    <label>Pace:</label><br>
+                    <label>Age:</label><br>
                     </div>
                     <div class="col-md-3">
-                    <input type="number" name="pace"/><br>
+                    <input type="number" name="age"/><br>
                     </div>
                     </div><br>
 
                     <div class="row">
                     <div class="col-md-9">
-                    <label>Shooting:</label><br>
+                    <label>Nationality:</label><br>
                     </div>
                     <div class="col-md-3">
-                    <input type="number" name="shoot"/><br>
+                    <input type="text" name="nationality"/><br>
                     </div>
                     </div><br>
 
                     <div class="row">
                     <div class="col-md-9">
-                    <label>Passing:</label><br>
+                    <label>Experience:</label><br>
                     </div>
                     <div class="col-md-3">
-                    <input type="number" name="pass"/><br>
+                    <input type="number" name="expr"/><br>
                     </div>
                     </div><br>
 
                     <div class="row">
                     <div class="col-md-9">
-                    <label>Dribbling:</label><br>
+                    <label>Club Managing:</label><br>
                     </div>
                     <div class="col-md-3">
-                    <input type="number" name="drib"/><br>
-                    </div>
-                    </div><br>
-
-                    <div class="row">
-                    <div class="col-md-9">
-                    <label>Defending:</label><br>
-                    </div>
-                    <div class="col-md-3">
-                    <input type="number" name="def"/><br>
-                    </div>
-                    </div><br>
-
-                    <div class="row">
-                    <div class="col-md-9">
-                    <label>Physicality:</label><br>
-                    </div>
-                    <div class="col-md-3">
-                    <input type="number" name="phy"/><br>
-                    </div>
-                    </div><br>
-
-                    <div class="row">
-                    <div class="col-md-9">
-                    <label>Jumping:</label><br>
-                    </div>
-                    <div class="col-md-3">
-                    <input type="number" name="jump"/><br>
-                    </div>
-                    </div><br>
-
-                    <div class="row">
-                    <div class="col-md-9">
-                    <label>Tackling:</label><br>
-                    </div>
-                    <div class="col-md-3">
-                    <input type="number" name="tackling"/><br>
-                    </div>
-                    </div><br>
-
-                    <div class="row">
-                    <div class="col-md-9">
-                    <label>GK Handling:</label><br>
-                    </div>
-                    <div class="col-md-3">
-                    <input type="number" name="handling"/><br>
-                    </div>
-                    </div><br>
-
-                    <div class="row">
-                    <div class="col-md-9">
-                    <label>GK Kicking:</label><br>
-                    </div>
-                    <div class="col-md-3">
-                    <input type="number" name="kick"/><br>
+                    <input type="text" name="club_manages"/><br>
                     </div>
                     </div><br>
 
@@ -201,7 +165,7 @@
 </div>
 <!--Form ends-->
 </body>
-<br><br>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -215,39 +179,38 @@
 
     if(isset($_GET['submit']))
     {
-        $player_id = $_GET['player_id'];
-        $pace = $_GET['pace'];
-        $shoot = $_GET['shoot'];
-        $pass = $_GET['pass'];
-        $drib = $_GET['drib'];
-        $def = $_GET['def'];
-        $phy = $_GET['phy'];
-        $jump = $_GET['jump'];
-        $tackling = $_GET['tackling'];
-        $handling = $_GET['handling'];
-        $kick = $_GET['kick'];
+        $man_name = $_GET['man_name'];
+        $age = $_GET['age'];
+        $nationality = $_GET['nationality'];
+        $expr = $_GET['expr'];
+        $club_managing = $_GET['club_manages'];
 
-        if($pace && $shoot && $pass && $drib && $def && $phy && $jump && $tackling && $handling && $kick)
+        if($man_name && $age && $nationality && $expr && $club_managing)
         {
+
+          #double insertion tackling
+
+          $ins_check = "SELECT man_name FROM manager WHERE man_name='$man_name';";
+
           $check_res = mysqli_query($con,$ins_check);
-            if(mysqli_num_rows($check_res) <= 0)
-            {
-              echo "<h6 class='text-center'>Player does not exist in database</h6><br><br>";
-            }
-            else{
-            $ins_query = "INSERT INTO skills(player_id,pace,shoot,pass,drib,def,phy,jump,tackling,handling,kick) VALUES($player_id,$pace,$shoot,$pass,$drib,$def,$phy,$jump,$tackling,$handling,$kick);";
-            
-            if(mysqli_query($con,$ins_query))
-            {
-                echo "<br><h6 class='text-center'>Skills added to Player</h6><br><br>";
-            }
-            else
-            {
-                echo "<br><h6 class='text-center'>Try again</h6>";
-            }
+          if(mysqli_num_rows($check_res) <= 0)
+          {
+            echo "<h6 class='text-center'>Manager does not exist in database</h6><br><br>";
+          }
+          else{
+          #DIT end
+          $up_q = "SELECT man_id FROM manager WHERE man_name='$man_name';";
+          $up_q1 = mysqli_query($con,$up_q);
+          $up_id = mysqli_fetch_assoc($up_q1);
+          $ins_query1 = "UPDATE manager SET age=$age,nationality='$nationality',expr=$expr,club_manages='$club_managing' WHERE man_name='$man_name';";
+
+
+        mysqli_query($con,$ins_query1);
+            echo "<br><h6 class='text-center'>Manager updated in database</h6>";
+        
         }}
         else
-            echo "<br><h6 class='text-center'>Enter all details of Player</h6>";
+            echo "<br><h6 class='text-center'>Enter all details of Manager</h6>";
     }
 
 ?>

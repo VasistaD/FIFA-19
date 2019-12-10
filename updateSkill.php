@@ -52,7 +52,7 @@
         <a class="nav-link" href="queries.php">Queries <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Insert
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -64,7 +64,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Update
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -86,12 +86,12 @@
 </nav>
 <br>
 <br>
-<h1 class="text-center">Add skills to existing player</h1>
+<h1 class="text-center">Update skills to existing player</h1>
 <br>
 <br>
 
 <div id="insForm" class="container border border-light">
-<form method="GET" action="crudSkill.php">
+<form method="GET" action="updateSkill.php">
                     <div class="container">
 
                     <div class="row">
@@ -229,22 +229,18 @@
 
         if($pace && $shoot && $pass && $drib && $def && $phy && $jump && $tackling && $handling && $kick)
         {
-          $check_res = mysqli_query($con,$ins_check);
+            $ins_check = "SELECT player_name FROM footballer WHERE player_id=$player_id;";
+
+            $check_res = mysqli_query($con,$ins_check);
             if(mysqli_num_rows($check_res) <= 0)
             {
               echo "<h6 class='text-center'>Player does not exist in database</h6><br><br>";
             }
             else{
-            $ins_query = "INSERT INTO skills(player_id,pace,shoot,pass,drib,def,phy,jump,tackling,handling,kick) VALUES($player_id,$pace,$shoot,$pass,$drib,$def,$phy,$jump,$tackling,$handling,$kick);";
+            $ins_query = "UPDATE skills SET pace=$pace,shoot=$shoot,pass=$pass,drib=$drib,def=$def,phy=$phy,jump=$jump,tackling=$tackling,handling=$handling,kick=$kick WHERE player_id=$player_id;";
             
-            if(mysqli_query($con,$ins_query))
-            {
-                echo "<br><h6 class='text-center'>Skills added to Player</h6><br><br>";
-            }
-            else
-            {
-                echo "<br><h6 class='text-center'>Try again</h6>";
-            }
+            mysqli_query($con,$ins_query);
+                echo "<br><h6 class='text-center'>Skills updated to Player</h6><br><br>";
         }}
         else
             echo "<br><h6 class='text-center'>Enter all details of Player</h6>";
